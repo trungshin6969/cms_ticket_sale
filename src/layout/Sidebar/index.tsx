@@ -1,5 +1,7 @@
 import React from 'react';
 import { logo } from '@assets/images';
+import { List } from 'antd';
+import { HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
 // import React, { memo, useState, useEffect } from 'react';
 // import { useHistory, useLocation } from 'react-router';
 // import { privatePage } from '@routers/mainRouter';
@@ -8,6 +10,8 @@ import { logo } from '@assets/images';
 // import { logo } from '@shared/assets/images';
 // import { UilAngleRight } from '@iconscout/react-unicons';
 // import MenuItem from './ItemMenu';
+// import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+// import type { MenuProps, MenuTheme } from 'antd';
 
 // interface IRenderMenuProps {
 //   listNav: Array<IRouter>;
@@ -36,7 +40,27 @@ import { logo } from '@assets/images';
 // };
 
 // const RenderMenu = memo(renderMenu);
-const Sidebar = () => {
+
+const menuItems = [
+  {
+    name: 'Trang chủ',
+    icon: <HomeIcon />,
+  },
+  {
+    name: 'Quản lý vé',
+    icon: <TicketIcon />,
+  },
+  {
+    name: 'Đối soát vé',
+    icon: <TicketCheckIcon />,
+  },
+  {
+    name: 'Cài đặt',
+    icon: <SettingIcon />,
+  },
+];
+
+const Sidebar: React.FC = () => {
   // const SiderComponent: React.FC<{
   //   className: string;
   //   setClassName: (className: string) => void;
@@ -60,8 +84,19 @@ const Sidebar = () => {
   //   }, [className]);
 
   return (
-    <div className="logo">
-      <img src={logo} alt="insight" />
+    <div className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="insight" />
+      </div>
+      <div className="menu">
+        <List>
+          {menuItems.map(item => (
+            <List.Item>
+              <List.Item.Meta key={item.name} avatar={item.icon} title={item.name} />
+            </List.Item>
+          ))}
+        </List>
+      </div>
     </div>
     // <div className={className} onClick={onClick}>
     //   <div className="icon">

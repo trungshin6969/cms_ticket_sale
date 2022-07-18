@@ -3,7 +3,7 @@ import React from 'react';
 import * as Icon from 'react-feather';
 import { useSelector } from 'react-redux';
 
-import { IconBack } from '@assets/icon';
+// import { IconBack } from '@assets/icon';
 import { CheckPermissionFunc } from '@hoc/CheckPermission';
 import { UilFileCheck, UilFileImport, UilShareAlt, UilTrash } from '@iconscout/react-unicons';
 import { RootState } from '@modules';
@@ -22,8 +22,8 @@ const listIconType = {
   refresh: <Icon.RefreshCw size="24" className="icon-feather" />,
   logOut: <Icon.LogOut size="24" className="icon-feather red-icon" />,
   key: <Icon.Key size="24" className="icon-feather" />,
-  back: <IconBack size="24" className="icon-feather" />,
-  goBack: <IconBack size="24" className="icon-feather" />,
+  // back: <IconBack size="24" className="icon-feather" />,
+  // goBack: <IconBack size="24" className="icon-feather" />,
   detail: <Icon.Info size="24" className="icon-feather" />,
   play: <Icon.Play size="24" className="icon-feather" />,
   minus: <Icon.Minus size="24" className="icon-feather" />,
