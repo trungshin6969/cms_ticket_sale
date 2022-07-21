@@ -1,2 +1,9 @@
-.homepage{
+.homepage {
+    display: flex;
+    background: #E5E5E5;
+    .right_layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }

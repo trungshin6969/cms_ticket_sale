@@ -1,30 +1,39 @@
-import React, { memo } from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import React from 'react';
+import { Input } from 'antd';
+import { SearchIcon } from '@assets/icon';
+// import React, { memo } from 'react';
+// import { useSelector } from 'react-redux';
+// import { useHistory } from 'react-router';
 
-import { RootState } from '@modules';
-import UserEntity from '@modules/user/entity';
-import { Selector } from '@reduxjs/toolkit';
-import { imgAvatar } from '@shared/assets/images';
-import ChangeLanguage from '@shared/components/ChangeLanguage';
+// import { RootState } from '@modules';
+// import UserEntity from '@modules/user/entity';
+// import { Selector } from '@reduxjs/toolkit';
+// import { imgAvatar } from '@shared/assets/images';
+// import ChangeLanguage from '@shared/components/ChangeLanguage';
 
-interface IHeaderComponent {
-  profile?: UserEntity;
-}
+// interface IHeaderComponent {
+//   profile?: UserEntity;
+// }
 
-const HeaderComponentSelector: Selector<RootState, IHeaderComponent> = (state: RootState) => {
-  return {
-    profile: state.profile.user,
-  };
-};
+// const HeaderComponentSelector: Selector<RootState, IHeaderComponent> = (state: RootState) => {
+//   return {
+//     profile: state.profile.user,
+// };
+// };
 
 const HeaderComponent = () => {
-  const { profile } = useSelector(HeaderComponentSelector);
-  const history = useHistory();
+  // const { profile } = useSelector(HeaderComponentSelector);
+  // const history = useHistory();
 
   return (
     <>
       <div className="header-component">
+        <div className="search-component">
+          <Input placeholder="Search" />
+          <SearchIcon />
+        </div>
+      </div>
+      {/* <div className="header-component">
         <div className="header-component__search">
           <ChangeLanguage />
         </div>
@@ -43,9 +52,9 @@ const HeaderComponent = () => {
           <p className="identify__place">{profile?.email || 'Unknown'}</p>
           <p className="identify__hi">{(profile && profile?.role?.roleName) || 'Unknown'}</p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default memo(HeaderComponent);
+export default HeaderComponent;

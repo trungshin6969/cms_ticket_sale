@@ -1,7 +1,7 @@
 import React from 'react';
 import { logo } from '@assets/images';
 import { List } from 'antd';
-import { HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
+import { CopyRightIcon, HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
 // import React, { memo, useState, useEffect } from 'react';
 // import { useHistory, useLocation } from 'react-router';
 // import { privatePage } from '@routers/mainRouter';
@@ -85,17 +85,22 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="sidebar">
-      <div className="logo">
-        <img src={logo} alt="insight" />
-      </div>
       <div className="menu">
-        <List>
+        <div className="logo">
+          <img src={logo} alt="insight" />
+        </div>
+        <List style={{ marginLeft: 27 }}>
           {menuItems.map(item => (
             <List.Item>
               <List.Item.Meta key={item.name} avatar={item.icon} title={item.name} />
             </List.Item>
           ))}
         </List>
+      </div>
+      <div className="copyright">
+        <span>Copyright</span>
+        <CopyRightIcon />
+        <span>2020 Alta Software</span>
       </div>
     </div>
     // <div className={className} onClick={onClick}>

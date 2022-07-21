@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '@layout/Sidebar';
+import { Sidebar, HeaderComponent, ContentComponent } from '@layout/index';
 // import './style.scss';
 
 //import { Space } from 'antd';
@@ -133,6 +133,10 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <Sidebar />
+      <div className="right_layout">
+        <HeaderComponent />
+        <ContentComponent />
+      </div>
     </div>
     // <MainTitleComponent breadcrumbs={routerHomepage} />
     // <div className="main-card">

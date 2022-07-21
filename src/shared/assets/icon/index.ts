@@ -3,3 +3,5 @@ export { default as TicketIcon } from './ticket';
 export { default as TicketCheckIcon } from './ticketCheck';
 export { default as ListIcon } from './list';
 export { default as SettingIcon } from './setting';
+export { default as CopyRightIcon } from './copyRight';
+export { default as SearchIcon } from './search';

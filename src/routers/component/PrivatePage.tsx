@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-router';
 
 import config from '@config/index';
-import DefaultLayout from '@layout/index';
+// import DefaultLayout from '@layout/index';
 import authenticationPresenter from '@modules/authentication/presenter';
 import { TokenSelector } from '@modules/authentication/profileStore';
 
@@ -20,7 +20,7 @@ const PrivatePage: React.FC = () => {
       window.location.href = config.LOGIN_PAGE;
     }
   }, [token, dispatch]);
-
-  return <Switch>{ShowRouter({ routers: privateRouter, MasterLayout: DefaultLayout })}</Switch>;
+  // return <Switch>{ShowRouter({ routers: privateRouter, MasterLayout: DefaultLayout })}</Switch>;
+  return <Switch>{ShowRouter({ routers: privateRouter})}</Switch>;
 };
 export default PrivatePage;
