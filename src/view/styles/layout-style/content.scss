@@ -1,12 +1,40 @@
 @use "variable";
 
-.content-component {
-    padding: 20px 32px 32px 0px;
-    align-items: stretch;
+.chart-area {
+    background: #FFFFFF;
     height: 100%;
-    .chart-area {
-        background: #FFFFFF;
-        height: 100%;
-        border-radius: 24px;
+    border-radius: 24px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    .title {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 54px;
+        width: 178px;
+        height: 54px;
+        margin-top: 24px;
+    }
+    .revenue_datepicker {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 32px;
+        padding-right: 63px;
+        .revenue {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            height: 28px;
+        }
+        .datepicker {
+            width: 155px;
+            height: 40px; 
+        }
+    }
+    .area {
+        margin-top: 27px;
+        width: 98%;
+        height: 150px;
     }
 }

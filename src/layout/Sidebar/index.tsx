@@ -89,13 +89,15 @@ const Sidebar: React.FC = () => {
         <div className="logo">
           <img src={logo} alt="insight" />
         </div>
-        <List style={{ marginLeft: 27 }}>
-          {menuItems.map(item => (
-            <List.Item>
-              <List.Item.Meta key={item.name} avatar={item.icon} title={item.name} />
-            </List.Item>
-          ))}
-        </List>
+        <div className="list">
+          <List>
+            {menuItems.map(item => (
+              <List.Item>
+                <List.Item.Meta key={item.name} avatar={item.icon} title={item.name} />
+              </List.Item>
+            ))}
+          </List>
+        </div>
       </div>
       <div className="copyright">
         <span>Copyright</span>

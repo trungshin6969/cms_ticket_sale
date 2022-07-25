@@ -1,5 +1,7 @@
+import DefaultLayout from '@layout/index';
+import ContentComponent from '@layout/Content';
 import React from 'react';
-import { Sidebar, HeaderComponent, ContentComponent } from '@layout/index';
+// import { Sidebar, HeaderComponent, ContentComponent } from '@layout/index';
 // import './style.scss';
 
 //import { Space } from 'antd';
@@ -132,11 +134,14 @@ const Homepage = () => {
   // };
   return (
     <div className="homepage">
-      <Sidebar />
+      <DefaultLayout>
+        <ContentComponent/>
+      </DefaultLayout>
+      {/* <Sidebar />
       <div className="right_layout">
         <HeaderComponent />
         <ContentComponent />
-      </div>
+      </div> */}
     </div>
     // <MainTitleComponent breadcrumbs={routerHomepage} />
     // <div className="main-card">

@@ -21,6 +21,6 @@ const PrivatePage: React.FC = () => {
     }
   }, [token, dispatch]);
   // return <Switch>{ShowRouter({ routers: privateRouter, MasterLayout: DefaultLayout })}</Switch>;
-  return <Switch>{ShowRouter({ routers: privateRouter})}</Switch>;
+  return <Switch>{ShowRouter({ routers: privateRouter })}</Switch>;
 };
 export default PrivatePage;

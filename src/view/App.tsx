@@ -7,7 +7,7 @@ import { ConfigProvider } from 'antd';
 import React, { useEffect, useMemo } from 'react';
 import { IntlProvider } from 'react-intl';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import { Route, useHistory } from 'react-router';
 
 import locale from '@locale/index';
 import { TokenSelector } from '@modules/authentication/profileStore';
@@ -16,6 +16,23 @@ import { LanguageSelector } from '@modules/setting/settingStore';
 
 // import PublicPage from '../routers/component/PublicPage';
 import HomePage from './Homepage/index';
+import { BrowserRouter } from 'react-router-dom';
+
+// const MainView = memo(({ statusLogin: boolean }) => {
+//   return (
+//     <>
+//       {statusLogin ? (
+//         <Suspense fallback={<></>}>
+//           <PrivatePage />
+//         </Suspense>
+//       ) : (
+//         <Suspense fallback={<></>}>
+//           <PublicPage />
+//         </Suspense>
+//       )}
+//     </>
+//   );
+// });
 
 // const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
 //   return (
@@ -51,7 +68,10 @@ const App: React.FC = () => {
     <IntlProvider locale={language} messages={memoLangData}>
       <ConfigProvider locale={memoLangData}>
         {/* <MainView statusLogin={!lodash.isEmpty(token)} /> */}
-        <HomePage />
+        <BrowserRouter>
+          <Route path="/" component={HomePage}/>
+        </BrowserRouter>
+        {/* <DefaultLayout children={ContentComponent}/> */}
       </ConfigProvider>
     </IntlProvider>
   );
