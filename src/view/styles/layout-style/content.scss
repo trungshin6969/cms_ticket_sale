@@ -35,6 +35,53 @@
     .area {
         margin-top: 27px;
         width: 98%;
-        height: 150px;
+        height: 80px;
+    }
+    .revenue_week_total {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 40px;
+        width: 188px;
+        height: 22px;
+    }
+    .currency {
+        .amount {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30px;
+            width: 188px;
+            height: 22px;
+        }
+        .unit {
+            margin-left: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .donut_chart {
+        height: calc(100% - 394px);
+        background-color: pink;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        // padding: 83px 0px 53px 8px;
+        .donut_chart_item {
+            background-color: yellow;
+            display: flex;
+            flex-direction: column;
+            margin-right: 24px;
+            width: 50%;
+            align-items: center;
+            .donut_chart_title {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 28px;
+                padding-bottom: 25px;
+            }
+        }
     }
 }

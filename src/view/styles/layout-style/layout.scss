@@ -4,10 +4,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100vh;
+    background-color: blue;
     .main-component {
       padding: 20px 32px 32px 0px;
       align-items: stretch;
-      height: 100%;
+      height: calc(100% - 65px);
+      background-color: red;
     }
 }
 
