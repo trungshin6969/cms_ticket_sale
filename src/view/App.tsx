@@ -2,21 +2,24 @@ import '@shared/assets/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 import '@styles/styles.scss';
 
-import { ConfigProvider } from 'antd';
+// import { ConfigProvider } from 'antd';
 // import lodash from 'lodash';
-import React, { useEffect, useMemo } from 'react';
-import { IntlProvider } from 'react-intl';
-import { useSelector } from 'react-redux';
-import { Route, useHistory } from 'react-router';
+import React from 'react';
+// import { IntlProvider } from 'react-intl';
+// import { useSelector } from 'react-redux';
+// import { useHistory } from 'react-router';
 
-import locale from '@locale/index';
-import { TokenSelector } from '@modules/authentication/profileStore';
-import { LanguageSelector } from '@modules/setting/settingStore';
+// import locale from '@locale/index';
+// import { TokenSelector } from '@modules/authentication/profileStore';
+// import { LanguageSelector } from '@modules/setting/settingStore';
 // import PrivatePage from '@routers/component/PrivatePage';
 
 // import PublicPage from '../routers/component/PublicPage';
 import HomePage from './Homepage/index';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TicketManagement from './TicketManagement/index';
+import TicketCheck from './TicketCheck';
+import Settinng from './Setting';
 
 // const MainView = memo(({ statusLogin: boolean }) => {
 //   return (
@@ -52,28 +55,40 @@ import { BrowserRouter } from 'react-router-dom';
 
 // For Test
 const App: React.FC = () => {
-  const { token } = useSelector(TokenSelector);
-  const { language } = useSelector(LanguageSelector);
-  const history = useHistory();
-  const memoLangData = useMemo(() => {
-    return locale[language];
-  }, [language]);
-  useEffect(() => {
-    if (!token) {
-      history.push('/');
-    }
-  }, [history, token]);
+  // const { token } = useSelector(TokenSelector);
+  // const { language } = useSelector(LanguageSelector);
+  // const history = useHistory();
+  // const memoLangData = useMemo(() => {
+  //   return locale[language];
+  // }, [language]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     history.push('/');
+  //   }
+  // }, [history, token]);
 
   return (
-    <IntlProvider locale={language} messages={memoLangData}>
-      <ConfigProvider locale={memoLangData}>
-        {/* <MainView statusLogin={!lodash.isEmpty(token)} /> */}
-        <BrowserRouter>
-          <Route path="/" component={HomePage}/>
-        </BrowserRouter>
-        {/* <DefaultLayout children={ContentComponent}/> */}
-      </ConfigProvider>
-    </IntlProvider>
+    // <IntlProvider locale={language} messages={memoLangData}>
+    //   <ConfigProvider locale={memoLangData}>
+    //     {/* <MainView statusLogin={!lodash.isEmpty(token)} /> */}
+    //   </ConfigProvider>
+    // </IntlProvider>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/ticket-management">
+          <TicketManagement />
+        </Route>
+        <Route path="/ticket-check">
+          <TicketCheck />
+        </Route>
+        <Route path="/setting">
+          <Settinng />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 

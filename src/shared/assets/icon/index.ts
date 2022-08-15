@@ -5,3 +5,4 @@ export { default as ListIcon } from './list';
 export { default as SettingIcon } from './setting';
 export { default as CopyRightIcon } from './copyRight';
 export { default as SearchIcon } from './search';
+export { default as FilterIcon } from './filter';

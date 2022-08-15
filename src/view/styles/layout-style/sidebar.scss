@@ -24,8 +24,28 @@ $padding-inside: 1rem;
     .logo {
       margin-bottom: 59px;
     }
-    .list {
-      padding-left: 27px;
+    .ant-list {
+      .list-item {
+        border-radius: 8px;
+        height: 56px;
+        padding-left: 27px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .item-name {
+          padding-left: 14px;
+        }
+        &.active {
+          background-color: $color-menu;
+          color: $color-text;
+          & path {
+            fill: $color-text;
+          }
+          & > span {
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
   .copyright {

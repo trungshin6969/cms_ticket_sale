@@ -9,25 +9,6 @@ $margin-top-body: 2.7rem;
   padding-top: 17px;
   display: flex;
   justify-content: space-between;
-  .search-component {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 437px;
-    height: 48px;
-    background: #EDE6E6;
-    border-radius: 8px;
-    padding: 10px 16px;
-    gap: 16px;
-    position: relative;
-    Input {
-      height: 28px;
-      background: #EDE6E6;
-      border: none;
-      width: 361px;
-      padding: 0;
-    }
-  }
   .acc-noti-mail {
     width: 144px;
     height: 48px;

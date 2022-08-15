@@ -2,6 +2,11 @@ import React from 'react';
 import { logo } from '@assets/images';
 import { List } from 'antd';
 import { CopyRightIcon, HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
+import { NavLink } from 'react-router-dom';
+import { routerHomepage } from '@view/Homepage/router';
+import { routerTicketManagement } from '@view/TicketManagement/router';
+import { routerTicketCheck } from '@view/TicketCheck/router';
+import { routerSetting } from '@view/Setting/router';
 // import React, { memo, useState, useEffect } from 'react';
 // import { useHistory, useLocation } from 'react-router';
 // import { privatePage } from '@routers/mainRouter';
@@ -45,22 +50,26 @@ const menuItems = [
   {
     name: 'Trang chủ',
     icon: <HomeIcon />,
+    path: routerHomepage.path,
   },
   {
     name: 'Quản lý vé',
     icon: <TicketIcon />,
+    path: routerTicketManagement.path,
   },
   {
     name: 'Đối soát vé',
     icon: <TicketCheckIcon />,
+    path: routerTicketCheck.path,
   },
   {
     name: 'Cài đặt',
     icon: <SettingIcon />,
+    path: routerSetting.path,
   },
 ];
 
-const Sidebar: React.FC = () => {
+const Sidebar = ({ active }: { active: number }) => {
   // const SiderComponent: React.FC<{
   //   className: string;
   //   setClassName: (className: string) => void;
@@ -89,15 +98,18 @@ const Sidebar: React.FC = () => {
         <div className="logo">
           <img src={logo} alt="insight" />
         </div>
-        <div className="list">
-          <List>
-            {menuItems.map(item => (
-              <List.Item>
-                <List.Item.Meta key={item.name} avatar={item.icon} title={item.name} />
-              </List.Item>
-            ))}
-          </List>
-        </div>
+        <List>
+          {menuItems.map((item, index) => (
+            <NavLink
+              to={`${item.path}`}
+              key={index}
+              className={`list-item ${index === active && 'active'}`}
+            >
+              {item.icon}
+              <span className="item-name">{item.name}</span>
+            </NavLink>
+          ))}
+        </List>
       </div>
       <div className="copyright">
         <span>Copyright</span>

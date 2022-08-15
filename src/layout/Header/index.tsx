@@ -1,7 +1,6 @@
 import React from 'react';
-import { Input } from 'antd';
-import { SearchIcon } from '@assets/icon';
 import { accNotiMail } from '@assets/images';
+import SearchComponent from '@shared/components/SearchComponent';
 // import React, { memo } from 'react';
 // import { useSelector } from 'react-redux';
 // import { useHistory } from 'react-router';
@@ -22,6 +21,11 @@ import { accNotiMail } from '@assets/images';
 // };
 // };
 
+// const [search, setSearch] = useState<string>('');
+// const handleSearch = (searchKey: string) => {
+//   setSearch(searchKey);
+// };
+
 const HeaderComponent = () => {
   // const { profile } = useSelector(HeaderComponentSelector);
   // const history = useHistory();
@@ -29,10 +33,11 @@ const HeaderComponent = () => {
   return (
     <>
       <div className="header-component">
-        <div className="search-component">
-          <Input placeholder="Search" />
-          <SearchIcon />
-        </div>
+        {/* <div className="search-component"> */}
+        {/* <Input placeholder="Search" />
+          <SearchIcon /> */}
+        <SearchComponent placeholder={'Search'} classNames={'search-component'} />
+        {/* </div> */}
         <div className="acc-noti-mail">
           <img src={accNotiMail} alt="" />
         </div>

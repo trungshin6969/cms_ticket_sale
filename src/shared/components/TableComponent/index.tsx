@@ -10,7 +10,7 @@ import { useSingleAsync } from '@hook/useAsync';
 import { PermissionsSelector } from '@modules/authentication/profileStore';
 import { useAltaIntl } from '@shared/hook/useTranslate';
 
-import SearchComponent from '../SearchComponent/SearchComponent';
+// import SearchComponent from '../SearchComponent/SearchComponent';
 import Pagination from './Component/Pagination';
 import { IBEColumnsType, IBEPaginationTable, InitOption, InitPagination } from './interface';
 
@@ -270,11 +270,11 @@ const TableComponent: React.FC<IBEPaginationTable> = <T extends object>(
       {search?.placeholder && (
         <div className={`search-in-table ${search?.align ? align[search?.align] : 'to-right'}`}>
           <div className="search-label-default">{searchLable}</div>
-          <SearchComponent
+          {/* <SearchComponent
             onSearch={handleSearch}
             placeholder={search?.placeholder}
             classNames={search?.className ? search?.className : ''}
-          />
+          /> */}
         </div>
       )}
       <Table<T>
