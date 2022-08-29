@@ -1,19 +1,10 @@
 import React from 'react';
-// import lodash from 'lodash';
 import * as Icon from 'react-feather';
-// import { useIntl } from 'react-intl';
 import { Input } from 'antd';
+import { IProps } from 'src/types';
 
-interface IProps {
-  // onChange?: (value: string) => void;
-  // onClick?: (value: any) => void;
-  classNames?: string;
-  placeholder?: string;
-  // onSearch?: (value: string) => void;
-}
-
-const SearchComponent = (props: IProps) => {
-  const { classNames } = props;
+const SearchComponent = ({ width, height, placeholder }: IProps) => {
+  // const { classNames } = props;
   // const [valueInput, setValueInput] = useState<string | undefined>();
   // const intl = useIntl();
   // const onClickKeyDown = (event: any) => {
@@ -49,7 +40,7 @@ const SearchComponent = (props: IProps) => {
   // };
 
   return (
-    <div className={classNames}>
+    <div className="search-component" style={{ width, height }}>
       <Input
         type="text"
         // onChange={onChange}
@@ -58,7 +49,7 @@ const SearchComponent = (props: IProps) => {
         //   id: props.placeholder,
         //   defaultMessage: props.placeholder,
         // })}
-        placeholder={props.placeholder}
+        placeholder={placeholder}
         suffix={<Icon.Search />}
       />
       {/* <a className="icon-search" onClick={() => props.onClick(valueInput)}>

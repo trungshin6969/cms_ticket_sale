@@ -1,12 +1,9 @@
 import React from 'react';
 import { logo } from '@assets/images';
 import { List } from 'antd';
-import { CopyRightIcon, HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
+import { CopyRightIcon } from '@assets/icon';
 import { NavLink } from 'react-router-dom';
-import { routerHomepage } from '@view/Homepage/router';
-import { routerTicketManagement } from '@view/TicketManagement/router';
-import { routerTicketCheck } from '@view/TicketCheck/router';
-import { routerSetting } from '@view/Setting/router';
+import { menuItems } from 'src/data';
 // import React, { memo, useState, useEffect } from 'react';
 // import { useHistory, useLocation } from 'react-router';
 // import { privatePage } from '@routers/mainRouter';
@@ -45,29 +42,6 @@ import { routerSetting } from '@view/Setting/router';
 // };
 
 // const RenderMenu = memo(renderMenu);
-
-const menuItems = [
-  {
-    name: 'Trang chủ',
-    icon: <HomeIcon />,
-    path: routerHomepage.path,
-  },
-  {
-    name: 'Quản lý vé',
-    icon: <TicketIcon />,
-    path: routerTicketManagement.path,
-  },
-  {
-    name: 'Đối soát vé',
-    icon: <TicketCheckIcon />,
-    path: routerTicketCheck.path,
-  },
-  {
-    name: 'Cài đặt',
-    icon: <SettingIcon />,
-    path: routerSetting.path,
-  },
-];
 
 const Sidebar = ({ active }: { active: number }) => {
   // const SiderComponent: React.FC<{

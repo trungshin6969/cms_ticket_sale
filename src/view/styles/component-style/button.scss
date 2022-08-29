@@ -1,0 +1,15 @@
+@import '../variable';
+@import '../mixin';
+
+.default-btn {
+    border-radius: 8px;
+    border-color: $color-button;
+    color: $color-button;
+    margin-left: 10px;
+    &:hover {
+        @include transparent-button($color-button);
+    }
+    &:focus {
+        @include transparent-button($color-button);
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import HeaderComponent from './Header';
+import { LayoutProps } from 'src/types';
 // import React, { memo, PropsWithChildren, useState } from 'react';
 
 // export { default as Sidebar } from './Sidebar';
@@ -11,13 +12,7 @@ import HeaderComponent from './Header';
 //   history: any;
 // }
 
-type LayoutProps = {
-  children: React.ReactNode;
-  title: string;
-  active?: number;
-};
-
-const DefaultLayout = ({ children, active = 0, title }: LayoutProps) => {
+const DefaultLayout = ({ children, active = 0, title, filterTicketBar }: LayoutProps) => {
   // const DefaultLayout: React.FC<PropsWithChildren<IDefaultLayoutProps>> = props => {
   //   const [menu, setMenu] = useState<string>('sider-component big');
 
@@ -47,6 +42,7 @@ const DefaultLayout = ({ children, active = 0, title }: LayoutProps) => {
             <span className="title">{title}</span>
             {children}
           </div>
+          {filterTicketBar}
         </div>
       </div>
     </div>

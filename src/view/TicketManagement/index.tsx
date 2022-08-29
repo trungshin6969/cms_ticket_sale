@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import DefaultLayout from '@layout/index';
 import SearchComponent from '@shared/components/SearchComponent';
-import { Button, Checkbox, Col, DatePicker, Form, Modal, Row } from 'antd';
+import { Button, Checkbox, Col, DatePicker, Form, Modal, Pagination, Row} from 'antd';
 import 'antd/dist/antd.css';
 import { FilterIcon } from '@assets/icon';
 import moment from 'moment';
 import { CheckboxValueType } from 'antd/lib/checkbox/Group';
+import Table from 'antd/lib/table';
+import {
+  familyTicketData,
+  eventTicketData,
+  familyTicketColumns,
+  eventTicketColumns,
+} from 'src/data';
 
 const dateFormat = 'DD/MM/YYYY';
 
@@ -15,10 +22,6 @@ const TicketManagement = () => {
   const [modal, setModal] = useState(false);
   const [disabled, setDisabled] = useState(true);
 
-  const handleCancel = () => {
-    setModal(false);
-  };
-
   const toggleDisable = () => {
     setDisabled(!disabled);
   };
@@ -27,12 +30,21 @@ const TicketManagement = () => {
     console.log('checked = ', checkedValues);
   };
 
+  const [table, setTable] = useState(familyTicketData);
+  const [columns, setColumns] = useState(familyTicketColumns);
+
+  const handleCancel = () => {
+    setModal(false);
+    setTable(eventTicketData);
+    setColumns(eventTicketColumns);
+  };
+
   return (
     <DefaultLayout title="Danh sách vé">
       <div className="features">
-        <SearchComponent placeholder={'Tìm bằng số vé'} classNames={'search-component'} />
+        <SearchComponent placeholder={'Tìm bằng số vé'} width="346px" />
         <div className="button-features">
-          <Button icon={<FilterIcon />} onClick={() => setModal(true)}>
+          <Button className="default-btn" icon={<FilterIcon />} onClick={() => setModal(true)}>
             Lọc vé
           </Button>
           <Modal
@@ -43,6 +55,7 @@ const TicketManagement = () => {
             onCancel={handleCancel}
             footer={<Button onClick={handleCancel}>Lọc</Button>}
             closable={false}
+            maskClosable={false}
           >
             <Form className="date-picker-form" layout="vertical">
               <Form.Item name="date-picker" label="Từ ngày">
@@ -100,9 +113,11 @@ const TicketManagement = () => {
               </Form.Item>
             </Form>
           </Modal>
-          <Button>Xuất file (.csv)</Button>
+          <Button className="default-btn">Xuất file (.csv)</Button>
         </div>
       </div>
+      <Table columns={columns} dataSource={table} size="small" pagination={false} />
+      <Pagination defaultCurrent={1} size="small" total={200} />
     </DefaultLayout>
   );
 };

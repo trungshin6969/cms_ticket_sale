@@ -11,14 +11,11 @@ $padding-inside: 1rem;
 }
 
 .sidebar {
-  padding: 17px 36px 31px 33px;
-  width: 321px;
-  // background-color: red;
+  padding: 1.063rem 2.25rem 1.938rem 2.063rem;
   display: flex;
   flex-direction: column;
   height: 100vh;
   .menu {
-    // background-color: blue;
     width: 252px;
     height: 341px;
     .logo {
@@ -27,6 +24,7 @@ $padding-inside: 1rem;
     .ant-list {
       .list-item {
         border-radius: 8px;
+        margin-top: 0.5rem;
         height: 56px;
         padding-left: 27px;
         display: flex;

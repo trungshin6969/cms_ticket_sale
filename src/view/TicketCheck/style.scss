@@ -1,0 +1,43 @@
+@import "../styles/variable";
+@import "../styles/mixin";
+
+.content-features {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+    padding-right: 24px;
+    Button {
+        border-radius: 8px;
+        @include primary-button($color-button);
+        &:hover {
+            @include primary-button($color-button);
+        }
+        &:focus {
+            @include primary-button($color-button);
+        }
+    }
+}
+
+.uncheckedTicket {
+    font-style: italic;
+    color: #A5A8B1;
+}
+
+.checkedTicket {
+    font-style: italic;
+    color: #FD5959;
+}
+
+.filter-ticket-form {
+    margin-top: 2rem;
+    .ant-form-item-label label{
+        font-weight: 600;
+    }
+    .check-status .ant-form-item-control{
+        margin-left: 1.625rem;
+    }
+    .ticket-type .ant-form-item-control-input-content{
+        margin-left: 97px;
+    }
+}

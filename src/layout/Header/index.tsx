@@ -36,7 +36,7 @@ const HeaderComponent = () => {
         {/* <div className="search-component"> */}
         {/* <Input placeholder="Search" />
           <SearchIcon /> */}
-        <SearchComponent placeholder={'Search'} classNames={'search-component'} />
+        <SearchComponent placeholder={'Search'} width="370px" />
         {/* </div> */}
         <div className="acc-noti-mail">
           <img src={accNotiMail} alt="" />

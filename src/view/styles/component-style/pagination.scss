@@ -1,0 +1,16 @@
+.ant-pagination {
+    margin-top: 51px;
+    display: flex;
+    justify-content: center;
+    li.ant-pagination-item-active {
+        border: 1px solid #FF993C;
+        border-radius: 4px;
+        color: #FF993C;
+    }
+    // .ant-pagination-next .ant-pagination-item-link span path {
+    //     fill: #FF993C;
+    // }
+    .ant-pagination-options-size-changer.ant-select {
+        display: none;
+    }
+}

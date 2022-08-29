@@ -1,0 +1,32 @@
+.date-picker-form {
+    display: flex;
+    flex-direction: row;
+    .ant-row {
+        margin-right: 122px;
+        .ant-col.ant-form-item-control {
+            width: 143px;
+            .ant-picker {
+                border: 1px solid #A5A8B1;
+                path {
+                    fill: #FF993C;
+                }
+            }
+        }
+    }
+}
+
+.date-picker-filter-form .ant-form-item-control{
+    .ant-picker {
+        background:  #F7F8FB;
+        width: 133px;
+        path {
+            fill: #FF993C;
+        }
+    }
+    .ant-picker-disabled {
+        background:  #E0E0E0;
+    }
+    .ant-picker-disabled path{
+        fill: #A5A8B1;
+    }
+}

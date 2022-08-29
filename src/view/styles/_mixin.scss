@@ -1,7 +1,15 @@
+@import "./variable";
+
 @mixin transparent-button($color) {
   background-color: transparent; 
   border-color: $color;
   color: $color;
+}
+
+@mixin primary-button($color) {
+  background-color: $color; 
+  border-color: $color;
+  color: $color-text;
 }
 
 

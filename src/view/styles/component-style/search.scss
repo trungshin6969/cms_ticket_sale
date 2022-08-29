@@ -1,22 +1,20 @@
+@import '../variable';
+@import '../mixin';
+
 .search-component {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    width: 437px;
-    height: 48px;
-    background: #EDE6E6;
-    border-radius: 8px;
     padding: 10px 16px;
     gap: 16px;
-    position: relative;
+    border-radius: 8px;
+    height: 48px;
+    background: #EDE6E6;
     span {
         background: #EDE6E6;
         padding: 0;
         border: none;
-        Input {
-        background: #EDE6E6;
-        height: 28px;
-        width: 361px;
+        input {
+            background: #EDE6E6;
+            height: 28px;
+            width: 361px;
         }
-    }
+      }
 }
