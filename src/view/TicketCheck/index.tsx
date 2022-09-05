@@ -1,6 +1,6 @@
 import React from 'react';
-import DefaultLayout from '@layout/index';
-import FilterTicketBar from '@layout/filterTicketBar';
+import DefaultLayout from '@layout/DefaultLayout/index';
+import FilterTicketBar from '@layout/FilterTicketBar';
 import SearchComponent from '@shared/components/SearchComponent';
 import { Button, Pagination, Table } from 'antd';
 import { ticketColumns, ticketData } from 'src/data';
@@ -10,7 +10,7 @@ const TicketCheck = () => {
     <DefaultLayout title="Đối soát vé" filterTicketBar={<FilterTicketBar />}>
       <div className="content-features">
         <SearchComponent placeholder={'Tìm bằng số vé'} width="346px" />
-        <Button type="primary" style={{ marginLeft: 10 }}>
+        <Button className="primary-btn" type="primary" style={{ marginLeft: 10 }}>
           Chốt đối soát
         </Button>
       </div>

@@ -13,3 +13,24 @@
         @include transparent-button($color-button);
     }
 }
+
+.primary-btn {
+    border-radius: 8px;
+    @include primary-button($color-button);
+    &:hover {
+        @include primary-button($color-button);
+    }
+    &:focus {
+        @include primary-button($color-button);
+    }
+}
+
+.text-btn {
+    @include text-button($color-button);
+    &:hover {
+        @include text-button($color-button);
+    }
+    &:focus {
+        @include text-button($color-button);
+    }
+}

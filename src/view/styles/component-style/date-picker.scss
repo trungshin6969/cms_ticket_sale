@@ -1,19 +1,31 @@
+.date-picker-package-form,
 .date-picker-form {
     display: flex;
     flex-direction: row;
-    .ant-row {
-        margin-right: 122px;
-        .ant-col.ant-form-item-control {
-            width: 143px;
-            .ant-picker {
-                border: 1px solid #A5A8B1;
-                path {
-                    fill: #FF993C;
-                }
-            }
-        }
+}
+
+.ant-picker {
+    border: 1px solid #A5A8B1;
+    path {
+        fill: #FF993C;
     }
 }
+
+.date-picker-form .ant-row {
+    margin-right: 122px;
+    .ant-col.ant-form-item-control {
+        width: 143px;
+    }
+}
+.date-picker-package-form .ant-form-item-control-input-content{
+        display: flex;
+        flex-direction: row;
+        .ant-picker {
+            width: 132px;
+            margin-right: 9px;
+        }
+}
+
 
 .date-picker-filter-form .ant-form-item-control{
     .ant-picker {

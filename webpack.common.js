@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); 
-const SRC_DIR = path.resolve(__dirname, "src/view");
+const SRC_DIR = path.resolve(__dirname, "src");
+const PUBLIC_SRC_DIR = path.resolve(__dirname, "public");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const VENDOR_LIBS = [
@@ -77,7 +78,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: SRC_DIR + '/index.html',
+      template: PUBLIC_SRC_DIR + '/index.html',
       // favicon: SRC_DIR + '/favicon.ico',
     }),
     new MiniCssExtractPlugin({

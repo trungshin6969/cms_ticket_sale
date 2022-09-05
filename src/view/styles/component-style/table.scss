@@ -23,6 +23,10 @@
             tr.ant-table-row:nth-child(even) {
                 background: #F7F8FB;
             }
+            .ant-tag > ul {
+                padding-left: 20px;
+                margin-bottom: 0;
+            }
         }
     }
 }

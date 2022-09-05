@@ -12,6 +12,12 @@
   color: $color-text;
 }
 
+@mixin text-button($color) {
+  background-color: transparent; 
+  border-color: transparent;
+  color: $color;
+}
+
 
 @mixin no-outline($color) {
   outline: none;

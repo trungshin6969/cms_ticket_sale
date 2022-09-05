@@ -1,0 +1,51 @@
+.ant-modal-content {
+    width: 634px;
+    .ant-modal-header {
+        justify-content: center;
+        .ant-modal-title {
+            color: #1E0D03;
+        }      
+    }
+    .usage-status-form {
+        margin-top: 20px;
+        .ant-checkbox-group {
+            width: 100%;
+            .ant-checkbox-group-item {
+                margin-right: 25px;
+                .ant-checkbox-inner {
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+    .ant-col.ant-form-item-label {
+        padding: 0;
+        label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+    .package-name label::before{
+        visibility: hidden;
+    }
+    .input-price,
+    .input-price-small {
+        background: #F1F4F8;
+        border-radius: 8px;
+        border: none;
+        height: 40px;
+    }
+    .input-price {
+        width: 148px;
+    }
+    .input-price-small {
+        width: 72px;
+    }
+    .ant-select .ant-select-selector {
+        height: 40px;
+        border-radius: 8px;
+    }
+    .ant-select-arrow {
+        color: #FF993C;
+    }
+}

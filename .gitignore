@@ -1,5 +1,8 @@
 node_modules
+blueprint-templates
 dist
 .env.production
 .DS_Store
 .DS_Store?
+.husky
+.vscode

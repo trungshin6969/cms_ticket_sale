@@ -7,16 +7,6 @@
     width: 100%;
     margin-top: 2rem;
     padding-right: 24px;
-    Button {
-        border-radius: 8px;
-        @include primary-button($color-button);
-        &:hover {
-            @include primary-button($color-button);
-        }
-        &:focus {
-            @include primary-button($color-button);
-        }
-    }
 }
 
 .uncheckedTicket {

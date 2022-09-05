@@ -1,20 +1,21 @@
 import React from 'react';
-import {
-  FamilyTicketPackage,
-  EventTicketPackage,
-  usageStatus,
-  TicketCheck,
-  ticketStatus,
-} from '../types';
 import { ColumnsType } from 'antd/lib/table';
-import { Tag } from 'antd';
+import { Button, Tag } from 'antd';
 import { HomeIcon, SettingIcon, TicketCheckIcon, TicketIcon } from '@assets/icon';
 import { routerHomepage } from '@view/Homepage/router';
 import { routerTicketManagement } from '@view/TicketManagement/router';
 import { routerTicketCheck } from '@view/TicketCheck/router';
 import { routerSetting } from '@view/Setting/router';
+import { FormOutlined } from '@ant-design/icons';
+import {
+  IEventTicketPackage,
+  IFamilyTicketPackage,
+  UsageStatus,
+} from '@view/TicketManagement/interface';
+import { ITicketCheck, TicketStatus } from '@view/TicketCheck/interface';
+import { DateTime, ITicketPackageList, PackageStatus } from '@view/Setting/interface';
 
-export const familyTicketColumns: ColumnsType<FamilyTicketPackage> = [
+export const familyTicketColumns: ColumnsType<IFamilyTicketPackage> = [
   {
     title: 'STT',
     dataIndex: 'numericalOrder',
@@ -34,10 +35,16 @@ export const familyTicketColumns: ColumnsType<FamilyTicketPackage> = [
     title: 'Tình trạng sử dụng',
     key: 'usageStatus',
     dataIndex: 'usageStatus',
-    render: (status: usageStatus) => {
+    render: (status: UsageStatus) => {
       const color =
-        status === 'Đã sử dụng' ? '#919DBA' : status === 'Chưa sử dụng' ? '#03AC00' : '#FD5959';
-      return <Tag color={color}>{status}</Tag>;
+        status === 'Đã sử dụng' ? 'geekblue' : status === 'Chưa sử dụng' ? 'green' : 'red';
+      return (
+        <Tag color={color}>
+          <ul>
+            <li>{status}</li>
+          </ul>
+        </Tag>
+      );
     },
   },
   {
@@ -57,7 +64,7 @@ export const familyTicketColumns: ColumnsType<FamilyTicketPackage> = [
   },
 ];
 
-export const familyTicketData: FamilyTicketPackage[] = [
+export const familyTicketData: IFamilyTicketPackage[] = [
   {
     key: '1',
     numericalOrder: 1,
@@ -138,49 +145,9 @@ export const familyTicketData: FamilyTicketPackage[] = [
     ticketReleaseDate: '14/04/2021',
     checkInGate: 'Cổng 1',
   },
-  // {
-  //   key: '9',
-  //   numericalOrder: 9,
-  //   bookingCode: 'ALTMLNHG',
-  //   ticketNumber: '894648474910',
-  //   usageStatus: 'Đã sử dụng',
-  //   dateOfUse: '14/04/2021',
-  //   ticketReleaseDate: '14/04/2021',
-  //   checkInGate: 'Cổng 1'
-  // },
-  // {
-  //   key: '10',
-  //   numericalOrder: 10,
-  //   bookingCode: 'ALTETRUH',
-  //   ticketNumber: '894875101400',
-  //   usageStatus: 'Đã sử dụng',
-  //   dateOfUse: '14/04/2021',
-  //   ticketReleaseDate: '14/04/2021',
-  //   checkInGate: 'Cổng 1'
-  // },
-  // {
-  //   key: '11',
-  //   numericalOrder: 11,
-  //   bookingCode: 'ALTCSDGF',
-  //   ticketNumber: '205314876321',
-  //   usageStatus: 'Đã sử dụng',
-  //   dateOfUse: '14/04/2021',
-  //   ticketReleaseDate: '14/04/2021',
-  //   checkInGate: 'Cổng 1'
-  // },
-  // {
-  //   key: '12',
-  //   numericalOrder: 12,
-  //   bookingCode: 'ALTNBVGH',
-  //   ticketNumber: '185653100147',
-  //   usageStatus: 'Đã sử dụng',
-  //   dateOfUse: '14/04/2021',
-  //   ticketReleaseDate: '14/04/2021',
-  //   checkInGate: 'Cổng 1'
-  // },
 ];
 
-export const eventTicketColumns: ColumnsType<EventTicketPackage> = [
+export const eventTicketColumns: ColumnsType<IEventTicketPackage> = [
   {
     title: 'STT',
     dataIndex: 'numericalOrder',
@@ -206,10 +173,16 @@ export const eventTicketColumns: ColumnsType<EventTicketPackage> = [
     title: 'Tình trạng sử dụng',
     key: 'usageStatus',
     dataIndex: 'usageStatus',
-    render: (status: usageStatus) => {
+    render: (status: UsageStatus) => {
       const color =
-        status === 'Đã sử dụng' ? '#919DBA' : status === 'Chưa sử dụng' ? '#03AC00' : '#FD5959';
-      return <Tag color={color}>{status}</Tag>;
+        status === 'Đã sử dụng' ? 'geekblue' : status === 'Chưa sử dụng' ? 'green' : 'red';
+      return (
+        <Tag color={color}>
+          <ul>
+            <li>{status}</li>
+          </ul>
+        </Tag>
+      );
     },
   },
   {
@@ -229,7 +202,7 @@ export const eventTicketColumns: ColumnsType<EventTicketPackage> = [
   },
 ];
 
-export const eventTicketData: EventTicketPackage[] = [
+export const eventTicketData: IEventTicketPackage[] = [
   {
     key: '1',
     numericalOrder: 1,
@@ -320,7 +293,7 @@ export const eventTicketData: EventTicketPackage[] = [
   },
 ];
 
-export const ticketColumns: ColumnsType<TicketCheck> = [
+export const ticketColumns: ColumnsType<ITicketCheck> = [
   {
     title: 'STT',
     dataIndex: 'numericalOrder',
@@ -350,7 +323,7 @@ export const ticketColumns: ColumnsType<TicketCheck> = [
     title: '',
     dataIndex: 'ticketStatus',
     key: 'ticketStatus',
-    render: (status: ticketStatus) => {
+    render: (status: TicketStatus) => {
       return (
         <div className={status === 'Đã đối soát' ? 'checkedTicket' : 'uncheckedTicket'}>
           {status}
@@ -360,7 +333,7 @@ export const ticketColumns: ColumnsType<TicketCheck> = [
   },
 ];
 
-export const ticketData: TicketCheck[] = [
+export const ticketData: ITicketCheck[] = [
   {
     key: '1',
     numericalOrder: 1,
@@ -432,7 +405,7 @@ export const ticketData: TicketCheck[] = [
   },
 ];
 
-export const ticketCheckedData: TicketCheck[] = [
+export const ticketCheckedData: ITicketCheck[] = [
   {
     key: '1',
     numericalOrder: 1,
@@ -504,6 +477,130 @@ export const ticketCheckedData: TicketCheck[] = [
   },
 ];
 
+export const packageColumns: ColumnsType<ITicketPackageList> = [
+  {
+    title: 'STT',
+    dataIndex: 'numericalOrder',
+    key: 'numericalOrder',
+  },
+  {
+    title: 'Mã gói',
+    dataIndex: 'packageCode',
+    key: 'packageCode',
+  },
+  {
+    title: 'Tên gói vé',
+    key: 'packageName',
+    dataIndex: 'packageName',
+  },
+  {
+    title: 'Ngày áp dụng',
+    key: 'dateOfUse',
+    dataIndex: 'dateOfUse',
+    align: 'right',
+    render: (dateOfUse: DateTime) => {
+      return (
+        <>
+          <div>{dateOfUse.date}</div>
+          <div>{dateOfUse.time}</div>
+        </>
+      );
+    },
+  },
+  {
+    title: 'Ngày hết hạn',
+    key: 'expirationDate',
+    dataIndex: 'expirationDate',
+    align: 'right',
+    render: (expirationDate: DateTime) => {
+      return (
+        <>
+          <div>{expirationDate.date}</div>
+          <div>{expirationDate.time}</div>
+        </>
+      );
+    },
+  },
+  {
+    title: 'Giá vé (VNĐ/Vé)',
+    key: 'price',
+    dataIndex: 'price',
+    align: 'right',
+  },
+  {
+    title: 'Giá Combo (VNĐ/Combo)',
+    key: 'comboPrice',
+    dataIndex: 'comboPrice',
+  },
+  {
+    title: 'Tình trạng',
+    key: 'packageStatus',
+    dataIndex: 'packageStatus',
+    render: (status: PackageStatus) => {
+      const color = status === 'Đang áp dụng' ? 'green' : 'red';
+      return (
+        <Tag color={color}>
+          <ul>
+            <li>{status}</li>
+          </ul>
+        </Tag>
+      );
+    },
+  },
+  {
+    title: '',
+    dataIndex: '',
+    key: '',
+    render: () => {
+      return (
+        // <div className='update'>
+        //   <FormOutlined />
+        //   <span>Cập nhật</span>
+        // </div>
+        <Button icon={<FormOutlined />} type="text" className="text-btn">
+          Cập nhật
+        </Button>
+      );
+    },
+  },
+];
+
+export const packageListData: ITicketPackageList[] = [
+  {
+    key: '1',
+    numericalOrder: 1,
+    packageCode: 'ALT20210501',
+    packageName: 'Gói gia đình',
+    dateOfUse: {
+      date: '14/04/2021',
+      time: '08:00:00',
+    },
+    expirationDate: {
+      date: '14/04/2021',
+      time: '23:00:00',
+    },
+    price: '90.000 VNĐ',
+    comboPrice: '360.000 VNĐ/4 Vé',
+    packageStatus: 'Đang áp dụng',
+  },
+  {
+    key: '2',
+    numericalOrder: 2,
+    packageCode: 'ALT20210502',
+    packageName: 'Gói sự kiện',
+    dateOfUse: {
+      date: '14/04/2021',
+      time: '08:00:00',
+    },
+    expirationDate: {
+      date: '14/04/2021',
+      time: '23:00:00',
+    },
+    price: '20.000 VNĐ',
+    packageStatus: 'Tắt',
+  },
+];
+
 export const menuItems = [
   {
     name: 'Trang chủ',
@@ -525,4 +622,36 @@ export const menuItems = [
     icon: <SettingIcon />,
     path: routerSetting.path,
   },
+];
+
+export const familyData = [
+  {
+    type: 'Vé chưa sử dụng',
+    value: 13568,
+  },
+  {
+    type: 'Vé đã sử dụng',
+    value: 56024,
+  },
+];
+
+export const eventData = [
+  {
+    type: 'Vé chưa sử dụng',
+    value: 28302,
+  },
+  {
+    type: 'Vé đã sử dụng',
+    value: 30256,
+  },
+];
+
+export const areaChartData = [
+  { Weekdays: 'Thứ 2', value: 150 },
+  { Weekdays: 'Thứ 3', value: 178 },
+  { Weekdays: 'Thứ 4', value: 155 },
+  { Weekdays: 'Thứ 5', value: 255 },
+  { Weekdays: 'Thứ 6', value: 240 },
+  { Weekdays: 'Thứ 7', value: 220 },
+  { Weekdays: 'CN', value: 200 },
 ];

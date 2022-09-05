@@ -50,20 +50,41 @@
     margin-bottom: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    // padding: 83px 0px 53px 8px;
+    .datepicker {
+        margin-right: 50px;
+    }
     .donut_chart_item {
         display: flex;
         flex-direction: column;
-        margin-right: 24px;
-        width: 50%;
         align-items: center;
+        margin-right: 50px;
         .donut_chart_title {
             font-weight: 600;
             font-size: 18px;
             line-height: 28px;  
             padding-bottom: 25px;
+        }
+    }
+    .chart-type {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 16px;
+        .chart-color-orange,
+        .chart-color-blue {
+            border-radius: 4px;
+            width: 44px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        .chart-color-blue {
+            background: #4F75FF;
+        }
+        .chart-color-orange {
+            background: #FF8A48;
+        }
+        .chart-text {
+            font-weight: 400;
         }
     }
 }

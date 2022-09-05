@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import DefaultLayout from '@layout/index';
+import DefaultLayout from '@layout/DefaultLayout/index';
 import SearchComponent from '@shared/components/SearchComponent';
-import { Button, Checkbox, Col, DatePicker, Form, Modal, Pagination, Row} from 'antd';
+import { Button, Checkbox, Col, DatePicker, Form, Modal, Pagination, Row } from 'antd';
 import 'antd/dist/antd.css';
 import { FilterIcon } from '@assets/icon';
 import moment from 'moment';
@@ -53,7 +53,11 @@ const TicketManagement = () => {
             centered
             visible={modal}
             onCancel={handleCancel}
-            footer={<Button onClick={handleCancel}>Lọc</Button>}
+            footer={
+              <Button className="default-btn" onClick={handleCancel}>
+                Lọc
+              </Button>
+            }
             closable={false}
             maskClosable={false}
           >

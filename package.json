@@ -2,7 +2,7 @@
   "name": "template-alta-cms",
   "version": "1.0.0",
   "description": "a product of Alta's developer team",
-  "main": "./src/view/index.tsx",
+  "main": "./src/index.tsx",
   "scripts": {
     "dev": "npm run && webpack-dev-server --mode development",
     "build": "npm run clean && npm run && webpack --mode production",

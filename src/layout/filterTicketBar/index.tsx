@@ -39,11 +39,7 @@ const FilterTicketBar = () => {
             />
           </Form.Item>
           <Form.Item label="Đến ngày">
-            <DatePicker
-              defaultValue={moment('01/05/2021', dateFormat)}
-              format={dateFormat}
-              style={{ marginLeft: 80 }}
-            />
+            <DatePicker placeholder="dd/mm/yy" style={{ marginLeft: 80 }} />
           </Form.Item>
         </Form>
         <div className="form-submit">
